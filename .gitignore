@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+ENV/
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Editor and IDE specific
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# History
+.history/
+
+# System files
+.DS_Store
+Thumbs.db
