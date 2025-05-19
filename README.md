@@ -120,6 +120,10 @@ The backend consists of three services: app, language detection, and translation
    ```bash
    python main.py
    ```
+   - You will need to create a environment variable for the openai api you can either create a .env file or store the OPENAI_API_KEY in machine's environment.
+   ```python
+   OPENAI_API_KEY='your_key'
+   ```
 
 ## Conclusion
 
