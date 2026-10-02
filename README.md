@@ -9,35 +9,35 @@ Below is the architectural diagram depicting the components involved in the proj
 
 https://drive.google.com/file/d/1t65usTmjxZzilIybmQqKXp1txFfSZ9Po/view
 
-+----------------------- High-Level Architecture Diagram -----------------------+
+```
++--------------------+
+|      Frontend      |
+|  (HTML, CSS, JS)   |
++----------+---------+
+           |
+           | API calls
+           v
++--------------------+
+|     App Service    |
+|      (FastAPI)     |
++----------+---------+
+           |
+           | interacts with
+           v
++--------------------+        +--------------------+
+| Language Detection |<------>|      RabbitMQ      |
+|  Service (FastAPI) | detect |  (Message Broker)  |
++--------------------+  lang  +----------+---------+
+                                          ^
+                                          | performs
+                                          | translation
+                                          v
+                               +--------------------+
+                               |    Translation     |
+                               |  Service (FastAPI) |
+                               +--------------------+
+```
 
-+-------------------+
-|      Frontend     |
-| (HTML, CSS, JS)   |
-+---------+---------+
-          |
-          | API Calls
-          |
-+---------v---------+
-|      App Service  |
-| (FastAPI)         |
-+---------+---------+
-          |
-          | Interacts with
-          |
-+---------v---------+                       +---------------------+
-| Language Detection |<-------------------->|   RabbitMQ          |
-| Service (FastAPI)  |                      | (Message Broker)    |
-+---------+---------+   Detects Language    +---------------------+
-          |
-          | 
-          |
-+---------v---------+                      +---------------------+
-| Translation       |<-------------------->|   RabbitMQ          |
-| Service (FastAPI) |       Performs       | (Message Broker)    |
-+---------+---------+     Translations     +---------------------+
-
-+------------------------------------------------------------------------------+
 
 ## Prerequisites
 
