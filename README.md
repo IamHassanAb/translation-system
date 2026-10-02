@@ -1,4 +1,4 @@
-# Real-Time Translation Network
+# Translation System
 
 ## Overview
 This project is a real-time translation network that utilizes various services for language detection and translation. This README provides a step-by-step guide to set up and run the application.
